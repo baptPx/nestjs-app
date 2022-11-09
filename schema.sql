@@ -21,6 +21,10 @@ type UserDeleteOutput {
   userId: ID!
 }
 
+type AuthLoginOutput {
+  access_token: String!
+}
+
 type Query {
   sayHello: String!
 }
@@ -29,6 +33,7 @@ type Mutation {
   createUser(input: UserCreateInput!): UserCreateOutput!
   updateUser(userId: ID!, input: UserUpdateInput!): UserUpdateOutput!
   deleteUser(userId: ID!): UserDeleteOutput!
+  authLogin(username: String!, password: String!): AuthLoginOutput!
 }
 
 input UserCreateInput {
