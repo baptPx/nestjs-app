@@ -101,3 +101,5 @@ DELETE ```/users/:userId```
 
 You can search an item on open food fact through 
 GET ```/off/:codeBar```
+
+You can import the file ```postman_collection.json``` in postman to try these endpoints

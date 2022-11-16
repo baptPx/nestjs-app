@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "c1465bea-a969-4c80-9a99-03aefcc04c15",
+		"name": "nest-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6223996"
+	},
+	"item": [
+		{
+			"name": "Get openfood fact details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ4ZDc0Mjc0LWRkZTUtNDY4My04OTM5LWM2OTgwYjk5YmNkMiIsImVtYWlsIjoidHRAbWFpbC5mciIsImZpcnN0TmFtZSI6InN0cmluZyIsImlhdCI6MTY2ODU5NDgxMCwiZXhwIjoxNjY4NTk1NDEwfQ.h74CqUSU02datZiH9Um1r5afkWNUykIgP1sNvnH-_Z8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/off/3185370625101",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"off",
+						"3185370625101"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"tt@mail.fr\",\r\n    \"password\": \"123\",\r\n    \"firstName\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"tt@mail.fr\",\r\n    \"password\": \"123\",\r\n    \"firstName\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
