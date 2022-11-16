@@ -1,7 +1,7 @@
 import {UserService} from "../user.service";
 import {UserCreateInput, UserCreateOutput} from "../dto/user-create.dto";
 import {UserUpdateInput, UserUpdateOutput} from "../dto/user-update.dto";
-import {Body, Controller, Delete, Get, Param, Post, Put, UseGuards} from '@nestjs/common';
+import {Body, Controller, Delete, Param, Patch, Post, UseGuards} from '@nestjs/common';
 import {AuthGuard} from "@nestjs/passport";
 
 @Controller('users')
@@ -14,7 +14,7 @@ export class UserController {
     }
 
 
-    @Put(':userId')
+    @Patch(':userId')
     @UseGuards(AuthGuard('jwt'))
     async updateUser(
         @Param('userId') userId: string,

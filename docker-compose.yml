@@ -1,11 +1,23 @@
 version: '3.7'
 services:
-  postgres:
+  mypostgres:
     image: postgres:13
     hostname: postgres
-    container_name: postgres
+    container_name: mypostgres
     restart: always
     ports:
       - 5432:5433
     env_file:
       - database.env
+  nest-app:
+    build: .
+    ports:
+      - 3000:3000
+    environment:
+      DATABASE_HOST: mypostgres
+      DATABASE_PORT: 5432
+      DATABASE_USER: admin
+      DATABASE_PASSWORD: admin
+      DATABASE_DB: postgres
+    depends_on:
+      - mypostgres

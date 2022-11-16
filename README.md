@@ -22,52 +22,82 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Run with docker-compose
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Just lend in the repository and run (you have to install docker-compose before)
 
-## Installation
+```
+$ docker-compose up 
+```
+
+
+## Run with node
+
+First, be sure you have a Postgresql accessible, then edit with the corresponding parameterr the file ``` .env ```
+Install the dependencies with 
 
 ```bash
 $ npm install
 ```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+Then start the application with
+``` 
+npm run start
 ```
 
 ## Test
 
+Be sure you have installed the dependencies 
+```bash
+$ npm install
+```
+Then start the tests 
 ```bash
 # unit tests
 $ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
 
-## Support
+## Usage
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+First you should create a user on 
+POST ```/users```
+Body 
+``` 
+{
+    email: string;
+    password: string;
+    firstName: string;
+}
+```
+You can log with 
+POST ``/auth/login``
+Body
+``` 
+{
+    username: string; // email
+    password: string;
+}
+```
+return 
+``` 
+{ 
+    access_token: string;
+}
+```
+You can now use this token to PATCH user, DELETE user or GET off
+Place this token in header as following 
+``` 
+Authorization: Bearer <access_token>
+```
+PUT ```/users/:userId```
+Body 
+``` 
+{
+    email: string;
+    password: string;
+    firstName: string;
+}
+```
+DELETE ```/users/:userId```
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+You can search an item on open food fact through 
+GET ```/off/:codeBar```

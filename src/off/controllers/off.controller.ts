@@ -6,7 +6,6 @@ import {AuthGuard} from "@nestjs/passport";
 @Controller('off')
 export class OffController {
 
-
     constructor(
         private readonly offService: OffService,
     ) {}
